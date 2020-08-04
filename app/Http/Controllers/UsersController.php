@@ -36,7 +36,7 @@ class UsersController extends Controller
     public function followers($id){
         $user = User::findOrFail($id);
         $user->loadRelationshipCounts();
-        $followers = $user->$followers()->paginate(10);
+        $followers = $user->followers()->paginate(10);
         return view('users.followers',[
             'user'=>$user,
             'users'=>$followers,
