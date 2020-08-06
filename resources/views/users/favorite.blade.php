@@ -14,10 +14,8 @@
                         {{-- 投稿内容 --}}
                         <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                     </div>
-                    
                     <div class="btn-toolbar">
                         <div class="btn-group">
-                        
                             @include('favorite.favorite_button')
                     
                             @if (Auth::id() == $micropost->user_id)
@@ -26,7 +24,7 @@
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                                 {!! Form::close() !!}
                             @endif
-                    
+
                         </div>
                     </div>
                 </div>

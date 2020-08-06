@@ -18,6 +18,7 @@ class MicropostsController extends Controller
         }
         return view('welcome',$data);
     }
+    
     public function store(Request $request){
         $request->validate([
             'content'=>'required|max:255',
@@ -27,6 +28,7 @@ class MicropostsController extends Controller
         ]);
         return back();
     }
+    
     public function destroy($id){
         $micropost = \App\Micropost::findOrFail($id);
         if(\Auth::id() === $micropost->user_id){
